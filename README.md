@@ -4,11 +4,11 @@
 
 ---
 
-## 🚀 Habilidades e Tecnologias em Evolução:
+## 🚀 Habilidades e Tecnologias Aprendidas:
 
-- **TYPESCRIPT** —
-- **NEXT.JS** — 
-- **AWS** — 
+- **TYPESCRIPT** — Em Evolução...
+- **NEXT.JS** — Em Evolução...
+- **AWS** — Em Evolução...
 
 ---
 
