@@ -1,9 +1,9 @@
-import mysql, { createPool } from 'mysql2';
+import mysql, { createPool } from 'mysql2/promise';
 
 export const pool = mysql.createPool({
 	host: 'localhost',
 	port: '3306',
 	user: 'root',
-	password: 'senai',
+	password: 'root',
 	database: 'biblioteca_db'
 });
