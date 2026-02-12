@@ -7,3 +7,17 @@ export async function buscarLivroPorId(IdLivro){
     )
     return rows[0]
 }
+
+//Cadastrar um livro na biblioteca
+export async function cadastrarLivro(
+    tituloLivro, 
+    categoriaLivro, 
+    valorUnitarioLivro, 
+    estoqueMinLivro, 
+    estoqueMaxLivro
+) {
+    const [result] = await pool.query("INSERT INTO livros (titulo, categoria, valor_unitario, estoque_minimo, estoque_maximo) VALUES (?, ?, ?, ?, ?)", 
+        [tituloLivro, categoriaLivro, valorUnitarioLivro, estoqueMinLivro, estoqueMaxLivro]
+    )
+    return result.insertId
+}
