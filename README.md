@@ -4,16 +4,11 @@
 
 ---
 
-## 🚀 Habilidades e Tecnologias Estudadas
+## 🚀 Habilidades e Tecnologias em Evolução:
 
 - **TYPESCRIPT** —
 - **NEXT.JS** — 
-- **REACT** — 
 - **AWS** — 
-
----
-
-## 🎯 Destaques Pessoais
 
 ---
 
