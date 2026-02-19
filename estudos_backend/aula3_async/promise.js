@@ -8,4 +8,4 @@ function esperarTempo(ms){
 
     })
 }
-esperarTempo(2000).then(resultado => console.log(resultado)).catch(erro => console.error(error));
+esperarTempo(2000).then(resultado => console.log(resultado)).catch(error => console.error(error));
