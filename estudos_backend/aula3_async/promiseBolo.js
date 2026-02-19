@@ -5,11 +5,16 @@
 // Se não, retorna reject com bolo queimado ou cru
 // finally, criatividade de voces.
 
-function assarBolo(tempo) {
+function assarBolo(tempoDeForno) {
     return new Promise((resolve, reject) => {
-        setTimeout(() => { resolve (`O bolo assou em ${tempo} milissegundos`)
-    
-        reject(new Error('O bolo queimou!'))}, tempo);
-    })
-}
-assarBolo(5000).then(resultado => console.log(resultado)).catch((error) => console.error).finally(() => console.log('Finalizado'))
+        setTimeout(() => { 
+            if(tempoDeForno < 35){
+                reject(new Error('O bolo ficou cru!'))
+            } else if(tempoDeForno > 40 && tempoDeForno < 45) {
+                resolve (`O bolo assou em ${tempoDeForno} minutos`)
+            } else if(tempoDeForno >= 50) {
+                reject(new Error('O bolo queimou!'))}
+            })
+        }, tempoDeForno);
+    }
+assarBolo(42).then(resultado => console.log(resultado)).catch((error) => console.error(error)).finally(() => console.log('Finalizado'))

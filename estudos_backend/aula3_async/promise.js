@@ -1,6 +1,8 @@
 // Exemplo de Promise simulando tempo de espera
 function esperarTempo(ms){
     return new Promise((resolve, reject) => {
+
+        
         setTimeout(() => { resolve (`Esperou ${ms} milissegundos`)
     
         // Para simular o erro:
