@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import Header from './layouts/Header/Index'
+import Body from "./layouts/Body/Body"
+import { Footer } from "./layouts/Footer/Footer"
+import Header from "./layouts/Header"
 
 function App() {
 
   return (
     <>
-      <Header/>
+      <Header title="Nome do Site"/>
+      <Body/>
+      <Footer name="Desenvolvido por Emily Souza"/>
     </>
   )
 }

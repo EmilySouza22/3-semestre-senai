@@ -1,0 +1,10 @@
+.footer{
+    background-color: #906ae9;
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+
+    .name{
+        font-size: 20px;
+    }
+}
