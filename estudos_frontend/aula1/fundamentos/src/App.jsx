@@ -8,7 +8,7 @@ function App() {
     <>
       <Header title="Nome do Site"/>
       <Body/>
-      <Footer name="Desenvolvido por Emily Souza"/>
+      <Footer name="Emily Souza"/>
     </>
   )
 }

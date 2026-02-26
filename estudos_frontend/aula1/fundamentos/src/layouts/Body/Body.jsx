@@ -1,12 +1,31 @@
-import Card from '../../components/Card/Card'
-import styles from './Body.module.css'
+import Card from '../../components/Card/Card';
+import styles from './Body.module.css';
 
-const Body = ({nome, idade, cidade}) => {
-  return (
-    <>
-        <Card nome="Emily" idade="21" cidade="Floripa"/>
-    </>
-  )
-}
+const Body = () => {
+	//Array de usuários
+	const usuarios = [
+		{ nome: 'Emily', idade: 22, cidade: 'São José' },
+		{ nome: 'Bruno', idade: 30, cidade: 'Florianópolis' },
+		{ nome: 'João', idade: 35, cidade: 'Palhoça' },
+	];
 
-export default Body
+	return (
+		<>
+			<main className={styles.body}>
+                <h2>Usuários Cadastrados</h2>
+                <div className={styles.cardContainer}>
+                   {usuarios.map((usuario, index) => (
+                        <Card
+                            key={index}
+                            nome={usuario.nome}
+                            idade={usuario.idade}
+                            cidade={usuario.cidade}
+                        />
+                   ))} 
+                </div>
+            </main>
+		</>
+	);
+};
+
+export default Body;
