@@ -1,5 +1,10 @@
 // Exercício 2 — Fila com Prioridade
 
+/** 
+* enqueue = O(n)
+* dequeue = O(1)
+**/
+
 class Queue {
 	constructor() {
 		this.array = new Array();
