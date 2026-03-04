@@ -1,18 +1,25 @@
 import Card from '../../components/Card/Card';
+import { CardApi } from '../../components/Card/CardApi';
 import styles from './Body.module.css';
 
 const Body = () => {
 	//Array de usuários
 	const usuarios = [
-		{ nome: 'Emily', idade: 22, cidade: 'São José' },
-		{ nome: 'Bruno', idade: 30, cidade: 'Florianópolis' },
-		{ nome: 'João', idade: 35, cidade: 'Palhoça' },
-	];
+        {nome:"Ana", idade: 22, cidade:"São José"},
+        {nome:"Bruno", idade: 30, cidade:"Florianópolis"},
+        {nome:"João", idade: 35, cidade:"Palhoça"},
+        {nome:"Ana", idade: 22, cidade:"São José"},
+        {nome:"Bruno", idade: 30, cidade:"Florianópolis"},
+        {nome:"João", idade: 35, cidade:"Palhoça"},
+        {nome:"Ana", idade: 22, cidade:"São José"},
+        {nome:"Bruno", idade: 30, cidade:"Florianópolis"},
+        {nome:"João", idade: 35, cidade:"Palhoça"},
+    ]
 
 	return (
 		<>
 			<main className={styles.body}>
-                <h2>Usuários Cadastrados</h2>
+                <h1>Usuários Cadastrados</h1>
                 <div className={styles.cardContainer}>
                    {usuarios.map((usuario, index) => (
                         <Card
@@ -23,6 +30,9 @@ const Body = () => {
                         />
                    ))} 
                 </div>
+
+                <h2>Usuários vindos da API</h2>
+                <CardApi/>
             </main>
 		</>
 	);
