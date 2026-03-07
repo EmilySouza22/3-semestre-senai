@@ -1,71 +1,74 @@
-//Exercício 6 - Implementar Lista Encadeada Simples
-
 class Nodo {
     constructor(value) {
-        this.value = null;
-        this.next = null;
+        this.value = value
+        this.next = null
     }
 }
 
 class ListaEncadeada {
     constructor() {
-        this.ponteiro = null;
+        this.ponteiro = null
     }
 
     inserirNoInicio(value) {
-        const nodo = new Nodo(value);
-        nodo.next = this.ponteiro;
-        this.ponteiro = nodo;
+        const nodo = new Nodo(value)
+        nodo.next = this.ponteiro
+        this.ponteiro = nodo
     }
 
-    inserirNoFinal(value){
-        const nodo = new Nodo()
-        let current = this.ponteiro;
-        while(current.next){
-            current = current.next;
+    inserirNoFinal(value) {
+        const nodo = new Nodo(value)
+        if (!this.ponteiro) {
+            this.ponteiro = nodo;
+            return
         }
-        current.next = nodo;
+        let atual = this.ponteiro
+        while (atual.next) {
+            atual = atual.next
+        }
+        atual.next = nodo
     }
-
-    removerValor(value) {
-        if(!this.ponteiro) {
-            return 'Lista Vazia'
-        }
-
-        if(this.ponteiro.value == value) {
+    removerValor(valor) {
+        if (!this.ponteiro) return "Lista vazia"
+        if (this.ponteiro.value == valor) {
             this.ponteiro = this.ponteiro.next
-            return 'Removido'
+            return "Removido"
         }
 
-        let current = this.ponteiro
+        let atual = this.ponteiro;
         let proximo = this.ponteiro.next
 
-        while(proximo) {
-            if(proximo.value = value) {
-                current.pontiero = proximo.next
-                return 'Removido'
+        while (proximo) {
+            if (proximo.value == valor) {
+                atual.next = proximo.next
+                return "Removido"
             }
 
-            current = proximo
+            atual = proximo
             proximo = proximo.next
         }
-        return 'Valor não encontrado na lista'
-    }
+        return "Valor nao encontrado na lista"
 
+    }
     mostrar() {
-        const output = [];
-        let current = this.ponteiro;
-        while(current) {
-            output.push(current.value);
-            current = current.next;
+        const output = []
+        let atual = this.ponteiro
+        while (atual) {
+            output.push(atual.value)
+            atual = atual.next
         }
-        return output;
+        return output
     }
 }
 
-const listaEncadeada = new ListaEncadeada();
+const listaEncadeada = new ListaEncadeada()
 
-listaEncadeada.inserirNoInicio(4);
-listaEncadeada.inserirNoInicio(5);
-listaEncadeada.inserirNoInicio(6);
+listaEncadeada.inserirNoInicio(4)
+listaEncadeada.inserirNoInicio(5)
+listaEncadeada.inserirNoInicio(6)
+listaEncadeada.inserirNoFinal(3)
+listaEncadeada.inserirNoFinal(2)
+listaEncadeada.inserirNoFinal(1)
+console.log(listaEncadeada.mostrar())
+console.log(listaEncadeada.removerValor(5))
 console.log(listaEncadeada.mostrar())
