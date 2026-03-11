@@ -26,7 +26,7 @@ class Category {
     }
 
     calcularDesconto(produto: Product) : number {
-        return produto.price * (this.desconto/100)
+        return produto.price - (produto.price * (this.desconto/100))
     }
  
 }
