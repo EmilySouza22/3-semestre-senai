@@ -45,3 +45,51 @@ console.log("primeiraCompra", primeiraCompra)
 
 const descontoVeraoShort = verao.calcularDesconto(short)
 console.log("descontoVeraoShort", descontoVeraoShort)
+
+//Desafio: Criar um sistema com diferentes tipos de funcionários (exemplo: programador, designer) utilizando herança
+//Tarefa: Criar uma classe Funcionario com atributos como nome, salario, e um método calcularSalario()
+
+class Funcionario {
+    nome: string;
+    salario: number;
+
+    constructor(nome:string, salario?:number){
+        this.nome = nome;
+        this.salario = salario ?? 1500;
+    }
+
+    calcularSalario(){
+        return this.salario;
+    }
+
+}
+
+class Programador extends Funcionario {
+    constructor(nome: string){
+        super(nome);
+    }
+
+    calcularSalario(){
+        return this.salario * 5;
+    }
+
+}
+
+class Designer extends Funcionario {
+    constructor(nome: string, salario: number){
+        super(nome, salario);
+    }
+
+    calcularSalario(){
+        return this.salario * 2
+    }
+}
+
+//Criar classes específicas para cada tipo de funcionário, como Programador e Designer, 
+//que herdam de Funcionario  e implementam seu próprio cálculo de salário
+
+const vendedor = new Programador("Emilie")
+const vendedor2 = new Designer("Emilie", 200)
+
+console.log(vendedor.calcularSalario())
+console.log(vendedor2.calcularSalario())
