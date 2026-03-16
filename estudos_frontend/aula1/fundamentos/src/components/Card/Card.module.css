@@ -24,3 +24,9 @@ p{
     font-weight: 500;
 }
 
+.input{
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border: none;
+}
