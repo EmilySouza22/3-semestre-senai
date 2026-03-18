@@ -14,7 +14,7 @@ export const Login = () => {
     }
 
     return (
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-center min-h-screen'>
             <form onSubmit={handleSubmit} className='p-6 border rounded shadow-md space-y-4'>
                 <h2 className='text-xl font-bold'>Login</h2>
                 <input
@@ -25,7 +25,9 @@ export const Login = () => {
                     required
                     className='w-full px-3 py-2 border round'
                 />
-                <button type='submit' className='w-full bf-blue-600 text-white py-2 rounded hover:bg-blue-700'>
+                <button 
+                    type='submit' 
+                    className='w-full bg-blue-600 text-white py-2 rounded   hover:bg-blue-700'>
                     Entrar
                 </button>
             </form>

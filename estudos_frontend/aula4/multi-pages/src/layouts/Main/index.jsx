@@ -8,7 +8,7 @@ export const Main = () => {
     <div className='fle min-h-screen flex-col'>
         <Header/>
             <main className='flex-1 container mx-auto'>
-                <Outlet/>
+              <Outlet/>
             </main>
         <Footer/>
     </div>
