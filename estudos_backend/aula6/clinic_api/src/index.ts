@@ -1,5 +1,5 @@
 import express from 'express';
-
+import { prisma } from './prisma/prisma';
 import type { Usuario } from './prisma/generated/prisma/client';
 
 const app = express();
@@ -74,7 +74,12 @@ app.delete('/usuarios/:id', async (req, res) => {
     });
 })
 
+//fazer mesmas rotas que fez do usuario para o exames
 //get por id exames
+//delete
+//atualizando
+
+// Exames
 
 app.listen(port, () => {
     console.log("Servidor ta de pé :p")

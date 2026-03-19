@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  output   = "../prisma/generated/prisma"
 }
 
 datasource db {
@@ -16,7 +16,7 @@ datasource db {
 model Usuario {
   id    Int     @id @default(autoincrement())
   email String  @unique
-  name  String?
+  nome  String?
 
   @@map("usuario")
 }
