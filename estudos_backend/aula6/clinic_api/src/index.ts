@@ -1,6 +1,7 @@
 import express from 'express';
 import { prisma } from './prisma/prisma';
 import type { Exame, Usuario } from './prisma/generated/prisma/client';
+import { hasheandoSenha }  from './hash';
 
 const app = express();
 app.use(express.json())
@@ -29,6 +30,8 @@ app.get('/usuarios/:id', async (req, res) => {
     return res.status(200).json(usuario)
 })
 
+//criar uma senha e ao inves de salvar a senha no banco, salvar a hash no banco
+
 //criando usuario
 app.post("/usuarios", async (req, res) => {
     console.log(req.body)
@@ -36,7 +39,8 @@ app.post("/usuarios", async (req, res) => {
     const usuarioCriado = await prisma.usuario.create({
         data: {
             email: dadosUsuario.email,
-            nome: dadosUsuario.nome || null
+            nome: dadosUsuario.nome || null,
+            senha: await hasheandoSenha(dadosUsuario.senha || '')
         }
     })
     return res.status(201).json(usuarioCriado)

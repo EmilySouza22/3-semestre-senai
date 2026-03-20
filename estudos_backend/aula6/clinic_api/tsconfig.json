@@ -10,7 +10,6 @@
     "declaration": true,
     "declarationMap": true,
     "noUncheckedIndexedAccess": true,
-    "allowImportingTsExtensions": false,
     "exactOptionalPropertyTypes": true,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": true,

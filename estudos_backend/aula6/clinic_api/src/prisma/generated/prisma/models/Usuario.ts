@@ -38,18 +38,21 @@ export type UsuarioMinAggregateOutputType = {
   id: number | null
   email: string | null
   nome: string | null
+  senha: string | null
 }
 
 export type UsuarioMaxAggregateOutputType = {
   id: number | null
   email: string | null
   nome: string | null
+  senha: string | null
 }
 
 export type UsuarioCountAggregateOutputType = {
   id: number
   email: number
   nome: number
+  senha: number
   _all: number
 }
 
@@ -66,18 +69,21 @@ export type UsuarioMinAggregateInputType = {
   id?: true
   email?: true
   nome?: true
+  senha?: true
 }
 
 export type UsuarioMaxAggregateInputType = {
   id?: true
   email?: true
   nome?: true
+  senha?: true
 }
 
 export type UsuarioCountAggregateInputType = {
   id?: true
   email?: true
   nome?: true
+  senha?: true
   _all?: true
 }
 
@@ -171,6 +177,7 @@ export type UsuarioGroupByOutputType = {
   id: number
   email: string
   nome: string | null
+  senha: string | null
   _count: UsuarioCountAggregateOutputType | null
   _avg: UsuarioAvgAggregateOutputType | null
   _sum: UsuarioSumAggregateOutputType | null
@@ -200,12 +207,14 @@ export type UsuarioWhereInput = {
   id?: Prisma.IntFilter<"Usuario"> | number
   email?: Prisma.StringFilter<"Usuario"> | string
   nome?: Prisma.StringNullableFilter<"Usuario"> | string | null
+  senha?: Prisma.StringNullableFilter<"Usuario"> | string | null
 }
 
 export type UsuarioOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   nome?: Prisma.SortOrderInput | Prisma.SortOrder
+  senha?: Prisma.SortOrderInput | Prisma.SortOrder
 }
 
 export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
@@ -215,12 +224,14 @@ export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.UsuarioWhereInput[]
   NOT?: Prisma.UsuarioWhereInput | Prisma.UsuarioWhereInput[]
   nome?: Prisma.StringNullableFilter<"Usuario"> | string | null
+  senha?: Prisma.StringNullableFilter<"Usuario"> | string | null
 }, "id" | "email">
 
 export type UsuarioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   nome?: Prisma.SortOrderInput | Prisma.SortOrder
+  senha?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.UsuarioCountOrderByAggregateInput
   _avg?: Prisma.UsuarioAvgOrderByAggregateInput
   _max?: Prisma.UsuarioMaxOrderByAggregateInput
@@ -235,51 +246,60 @@ export type UsuarioScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Usuario"> | number
   email?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   nome?: Prisma.StringNullableWithAggregatesFilter<"Usuario"> | string | null
+  senha?: Prisma.StringNullableWithAggregatesFilter<"Usuario"> | string | null
 }
 
 export type UsuarioCreateInput = {
   email: string
   nome?: string | null
+  senha?: string | null
 }
 
 export type UsuarioUncheckedCreateInput = {
   id?: number
   email: string
   nome?: string | null
+  senha?: string | null
 }
 
 export type UsuarioUpdateInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UsuarioUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UsuarioCreateManyInput = {
   id?: number
   email: string
   nome?: string | null
+  senha?: string | null
 }
 
 export type UsuarioUpdateManyMutationInput = {
   email?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UsuarioUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   email?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UsuarioCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   nome?: Prisma.SortOrder
+  senha?: Prisma.SortOrder
 }
 
 export type UsuarioAvgOrderByAggregateInput = {
@@ -290,12 +310,14 @@ export type UsuarioMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   nome?: Prisma.SortOrder
+  senha?: Prisma.SortOrder
 }
 
 export type UsuarioMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   email?: Prisma.SortOrder
   nome?: Prisma.SortOrder
+  senha?: Prisma.SortOrder
 }
 
 export type UsuarioSumOrderByAggregateInput = {
@@ -324,27 +346,31 @@ export type UsuarioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   id?: boolean
   email?: boolean
   nome?: boolean
+  senha?: boolean
 }, ExtArgs["result"]["usuario"]>
 
 export type UsuarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
   nome?: boolean
+  senha?: boolean
 }, ExtArgs["result"]["usuario"]>
 
 export type UsuarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   email?: boolean
   nome?: boolean
+  senha?: boolean
 }, ExtArgs["result"]["usuario"]>
 
 export type UsuarioSelectScalar = {
   id?: boolean
   email?: boolean
   nome?: boolean
+  senha?: boolean
 }
 
-export type UsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "nome", ExtArgs["result"]["usuario"]>
+export type UsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "nome" | "senha", ExtArgs["result"]["usuario"]>
 
 export type $UsuarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Usuario"
@@ -353,6 +379,7 @@ export type $UsuarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     id: number
     email: string
     nome: string | null
+    senha: string | null
   }, ExtArgs["result"]["usuario"]>
   composites: {}
 }
@@ -779,6 +806,7 @@ export interface UsuarioFieldRefs {
   readonly id: Prisma.FieldRef<"Usuario", 'Int'>
   readonly email: Prisma.FieldRef<"Usuario", 'String'>
   readonly nome: Prisma.FieldRef<"Usuario", 'String'>
+  readonly senha: Prisma.FieldRef<"Usuario", 'String'>
 }
     
 
