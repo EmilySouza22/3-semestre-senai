@@ -14,10 +14,11 @@ datasource db {
 }
 
 model Usuario {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  nome  String?
-  senha String?
+  id     Int     @id @default(autoincrement())
+  email  String  @unique
+  nome   String?
+  senha  String?
+  tokens Token[]
 
   @@map("usuario")
 }
@@ -31,4 +32,21 @@ model Exame {
   data_exame DateTime
 
   @@map("exame")
+}
+
+model Token {
+  id        Int      @id @default(autoincrement())
+  token     String
+  type      Role
+  revoked   Boolean  @default(false)
+  expiresAt DateTime
+  usuario   Usuario  @relation(fields: [usuarioId], references: [id])
+  usuarioId Int
+
+  @@map("token")
+}
+
+enum Role {
+  ACESSO
+  REFRESH
 }
