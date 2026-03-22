@@ -1,7 +1,7 @@
 import express from 'express';
 import { prisma } from './prisma/prisma';
 import type { Exame, Usuario } from './prisma/generated/prisma/client';
-import { hasheandoSenha }  from './hash';
+import { hasheandoSenha }  from './utils/createHash';
 
 const app = express();
 app.use(express.json())
