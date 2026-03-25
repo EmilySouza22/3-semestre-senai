@@ -1,7 +1,7 @@
 import express from 'express';
 import { prisma } from './prisma/prisma';
 import type { Exame, Usuario } from './prisma/generated/prisma/client';
-import { hasheandoSenha }  from './utils/createHash';
+import { hasheandoSenha } from './utils/createHash';
 
 const app = express();
 app.use(express.json())
@@ -33,17 +33,64 @@ app.get('/usuarios/:id', async (req, res) => {
 //criar uma senha e ao inves de salvar a senha no banco, salvar a hash no banco
 
 //criando usuario
-app.post("/usuarios", async (req, res) => {
-    console.log(req.body)
+// app.post("/usuarios", async (req, res) => {
+//     console.log(req.body)
+//     const dadosUsuario = req.body as Usuario
+//     const usuarioCriado = await prisma.usuario.create({
+//         data: {
+//             email: dadosUsuario.email,
+//             nome: dadosUsuario.nome || null,
+//             senha: await hasheandoSenha(dadosUsuario.senha || '')
+//         }
+//     })
+//     return res.status(201).json(usuarioCriado)
+// })
+
+//1 - Atualizar rota de criacao do usuario para ser /cadastro
+app.post("/cadastro", async (req, res) => {
     const dadosUsuario = req.body as Usuario
     const usuarioCriado = await prisma.usuario.create({
         data: {
-            email: dadosUsuario.email,
             nome: dadosUsuario.nome || null,
+            email: dadosUsuario.email,
             senha: await hasheandoSenha(dadosUsuario.senha || '')
         }
     })
     return res.status(201).json(usuarioCriado)
+})
+
+/*
+2- Criar endpoint post para login, retornando sucesso ou erro 
+quando as credenciais forem invalidas
+*/
+
+app.post('/login', async (req, res) => {
+    const dadosUsuario = req.body as Usuario
+    const { email, senha } = req.body;
+
+    try {
+
+        const usuarioLogado = await prisma.usuario.findUnique({
+            where: { email }
+        })
+
+        return res.status(200).json({
+            sucess: true,
+            message: 'Login realizado com sucesso',
+            data: {
+                id: dadosUsuario.id,
+                nome: dadosUsuario.nome
+            }
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            sucess: false,
+            message: "Erro interno do servidor"
+        })
+
+    }
+
 })
 
 //atualizando usuario por id
@@ -107,7 +154,7 @@ app.get('/exames/:id', async (req, res) => {
 app.post('/exames', async (req, res) => {
     const dadosExames = req.body as Exame
     const exameCriado = await prisma.exame.create({
-        data:{
+        data: {
             tipo_exame: dadosExames.tipo_exame,
             valor: dadosExames.valor,
             descricao: dadosExames.descricao,
@@ -127,7 +174,7 @@ app.put('/exames/:id', async (req, res) => {
         data: {
             ...dadosExamesParaAtualizar
         },
-        where:{
+        where: {
             id: idExame
         }
     })
@@ -138,7 +185,7 @@ app.put('/exames/:id', async (req, res) => {
 app.delete('/exames/:id', async (req, res) => {
     const idExame = Number(req.params.id)
     const dadosExameDeletado = await prisma.exame.delete({
-        where:{
+        where: {
             id: idExame
         }
     })
