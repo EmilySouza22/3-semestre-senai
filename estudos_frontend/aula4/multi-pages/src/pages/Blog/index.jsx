@@ -1,28 +1,33 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from 'react'
 
 const Blog = () => {
-    const [post, setPosts] = useState([])
+    const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        fetch("https://localhost:3000/posts")
-        .then(res => res.json())
-        .then(data => {
-            setPosts(posts)
-        })
+        fetch("http://localhost:3000/posts")
+            .then(res => res.json())
+            .then(data => {
+                setPosts(data)
+            })
     }, [])
     return (
         <>
-            <div className="flex gap-2 ">
+            <div className='flex gap-2'>
                 {
                     posts.map(post => (
-                        <div key={post.id} className="card">
+                        <div key={post.id} className='card'>
+                            <img src={post.image} alt={post.title} />
                             <h2>{post.title}</h2>
-                            <p>{post.view}</p>
+                            <h3>{post.views}</h3>
+                            <p>{post.description}</p>
+                            <a href='#'>Leia Mais</a>
                         </div>
-                    ))
+                    )
+                    )
                 }
             </div>
         </>
+
     )
 }
 
