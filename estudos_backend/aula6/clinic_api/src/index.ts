@@ -2,9 +2,11 @@ import express from 'express';
 import { prisma } from './prisma/prisma';
 import type { Exame, Usuario } from './prisma/generated/prisma/client';
 import { hasheandoSenha } from './utils/createHash';
+import cors from "cors";
 
 const app = express();
 app.use(express.json())
+app.use(cors());
 const port = 3000;
 
 //teste
