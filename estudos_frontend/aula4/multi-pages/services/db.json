@@ -1,66 +1,150 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "image": "https://placehold.co/300x200",
-      "title": "a title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 100
-    },
-    {
-      "id": "2",
-      "image": "https://placehold.co/300x200",
-      "title": "another title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 200
-    },
-    {
-      "id": "3",
-      "image": "https://placehold.co/300x200",
-      "title": "another 2 title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 50
-    },
-    {
-      "id": "4",
-      "image": "https://placehold.co/300x200",
-      "title": "another 3 title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 500
-    },
-    {
-      "id": "5",
-      "image": "https://placehold.co/300x200",
-      "title": "another 4 title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 1150
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "users": [
-    {
-      "id": "1",
-      "name": "João",
-      "idade": "30"
-    },
-    {
-      "id": "2",
-      "name": "Maria",
-      "idade": "27"
-    }
-  ]
+	"posts": [
+		{
+			"id": "1",
+			"image": "https://placehold.co/300x200",
+			"title": "a title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 100
+		},
+		{
+			"id": "2",
+			"image": "https://placehold.co/300x200",
+			"title": "another title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 200
+		},
+		{
+			"id": "3",
+			"image": "https://placehold.co/300x200",
+			"title": "another 2 title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 50
+		},
+		{
+			"id": "4",
+			"image": "https://placehold.co/300x200",
+			"title": "another 3 title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 500
+		},
+		{
+			"id": "5",
+			"image": "https://placehold.co/300x200",
+			"title": "another 4 title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 1150
+		}
+	],
+	"comments": [
+		{
+			"id": "1",
+			"text": "a comment about post 1",
+			"postId": "1"
+		},
+		{
+			"id": "2",
+			"text": "another comment about post 1",
+			"postId": "1"
+		}
+	],
+	"profile": {
+		"name": "typicode"
+	},
+	"users": [
+		{
+			"id": "1",
+			"name": "João",
+			"idade": "30"
+		},
+		{
+			"id": "2",
+			"name": "Maria",
+			"idade": "27"
+		}
+	],
+	"autores": [
+		{
+			"id": 1,
+			"nome": "Machado de Assis",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Escritor brasileiro, considerado um dos maiores nomes da literatura nacional.",
+			"biografia": "Machado de Assis (1839–1908) nasceu no Rio de Janeiro e é amplamente considerado o maior escritor da literatura brasileira. De origem humilde, era filho de um pintor de paredes e de uma lavadeira, e teve uma formação praticamente autodidata. Ao longo de sua carreira, atuou como romancista, cronista, contista, poeta e dramaturgo. Foi um dos fundadores da Academia Brasileira de Letras, tornando-se seu primeiro presidente. Sua obra é marcada pelo realismo e por uma profunda análise psicológica dos personagens, além de um estilo irônico e crítico em relação à sociedade da época. Livros como 'Memórias Póstumas de Brás Cubas' e 'Dom Casmurro' são considerados marcos da literatura mundial, explorando temas como ciúme, loucura, hipocrisia social e a complexidade da mente humana.",
+			"especialidade": "Literatura Brasileira",
+			"cidade": "Rio de Janeiro",
+			"idade": 69,
+			"obras": [
+				"Dom Casmurro",
+				"Memórias Póstumas de Brás Cubas",
+				"Quincas Borba"
+			]
+		},
+		{
+			"id": 2,
+			"nome": "Clarice Lispector",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Escritora e jornalista brasileira, conhecida por sua escrita introspectiva e inovadora.",
+			"biografia": "Clarice Lispector (1920–1977) nasceu na Ucrânia e veio ainda criança para o Brasil, onde se estabeleceu em Recife. Tornou-se uma das mais importantes escritoras do século XX. Formada em Direito, também trabalhou como jornalista e tradutora. Sua obra é conhecida pelo caráter introspectivo e pela exploração profunda da consciência e da subjetividade humana. Em seus textos, frequentemente rompe com a narrativa tradicional, utilizando fluxos de pensamento e linguagem poética para abordar questões existenciais, identidade, solidão e o sentido da vida. Seu romance de estreia, 'Perto do Coração Selvagem', já demonstrava sua originalidade literária. Ao longo de sua carreira, consolidou-se como uma autora inovadora e influente, sendo estudada e admirada no Brasil e no exterior.",
+			"especialidade": "Literatura Brasileira",
+			"cidade": "Recife",
+			"idade": 56,
+			"obras": [
+				"A Hora da Estrela",
+				"A Paixão Segundo G.H.",
+				"Perto do Coração Selvagem"
+			]
+		},
+		{
+			"id": 3,
+			"nome": "Carlos Drummond de Andrade",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Poeta, contista e cronista brasileiro, um dos principais nomes do modernismo.",
+			"biografia": "Carlos Drummond de Andrade (1902–1987) nasceu em Itabira, Minas Gerais, e foi um dos principais nomes do modernismo brasileiro. Formado em Farmácia, trabalhou como funcionário público, mas dedicou grande parte de sua vida à literatura. Sua poesia é conhecida pela linguagem simples e acessível, combinada com grande profundidade filosófica e emocional. Drummond abordou temas como o cotidiano, o amor, a solidão, a política e os dilemas da existência humana. Obras como 'Alguma Poesia' marcaram o início de sua carreira, enquanto 'A Rosa do Povo' refletiu o contexto social e político da época. Além de poeta, também foi cronista e contista, deixando um legado literário vasto e influente.",
+			"especialidade": "Poesia",
+			"cidade": "Itabira",
+			"idade": 84,
+			"obras": ["Alguma Poesia", "A Rosa do Povo", "Sentimento do Mundo"]
+		},
+		{
+			"id": 4,
+			"nome": "Cecília Meireles",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Poetisa, professora e jornalista brasileira, referência na literatura infantil e poesia.",
+			"biografia": "Cecília Meireles (1901–1964) nasceu no Rio de Janeiro e foi uma das maiores vozes da poesia brasileira. Ficou órfã ainda na infância e foi criada pela avó, o que influenciou sua sensibilidade e visão de mundo. Formou-se professora e teve grande atuação na área da educação, defendendo métodos inovadores de ensino. Sua obra poética é marcada pelo lirismo, musicalidade e por temas como o tempo, a efemeridade da vida, a espiritualidade e a busca pelo sentido da existência. Além da poesia, também escreveu literatura infantil e textos jornalísticos. Obras como 'Romanceiro da Inconfidência' demonstram sua capacidade de unir história e poesia de forma profunda e artística.",
+			"especialidade": "Poesia",
+			"cidade": "Rio de Janeiro",
+			"idade": 63,
+			"obras": ["Romanceiro da Inconfidência", "Ou Isto ou Aquilo", "Viagem"]
+		},
+		{
+			"id": 5,
+			"nome": "Jorge Amado",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Escritor brasileiro famoso por retratar a cultura e o povo da Bahia.",
+			"biografia": "Jorge Amado (1912–2001) nasceu em Itabuna, na Bahia, e foi um dos escritores brasileiros mais populares e traduzidos internacionalmente. Sua obra é profundamente ligada à cultura baiana, retratando o cotidiano, as tradições, as desigualdades sociais e a vida do povo com linguagem acessível e envolvente. Ao longo de sua carreira, também teve atuação política, sendo filiado ao Partido Comunista e defendendo causas sociais. Seus livros combinam crítica social, humor, sensualidade e elementos do realismo. Obras como 'Capitães da Areia' abordam a infância marginalizada, enquanto 'Gabriela, Cravo e Canela' e 'Dona Flor e Seus Dois Maridos' exploram aspectos culturais e afetivos da sociedade brasileira.",
+			"especialidade": "Romance",
+			"cidade": "Ilhéus",
+			"idade": 88,
+			"obras": [
+				"Gabriela, Cravo e Canela",
+				"Capitães da Areia",
+				"Dona Flor e Seus Dois Maridos"
+			]
+		},
+		{
+			"id": 6,
+			"nome": "Monteiro Lobato",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Escritor brasileiro pioneiro da literatura infantil no país.",
+			"biografia": "Monteiro Lobato (1882–1948) nasceu em Taubaté, São Paulo, e foi um dos mais influentes escritores brasileiros, especialmente na literatura infantil. Formado em Direito, também atuou como editor e empresário, desempenhando papel importante na modernização do mercado editorial brasileiro. Sua obra mais famosa é o universo do Sítio do Picapau Amarelo, que reúne personagens icônicos como Emília, Narizinho e o Visconde de Sabugosa. Seus livros misturam fantasia, cultura popular, ciência e crítica social, contribuindo para a formação cultural de várias gerações. Apesar de sua importância, sua obra também é alvo de debates contemporâneos por conter elementos considerados controversos. Ainda assim, seu impacto na literatura e na educação brasileira é inegável.",
+			"especialidade": "Literatura Infantil",
+			"cidade": "Taubaté",
+			"idade": 66,
+			"obras": [
+				"Sítio do Picapau Amarelo",
+				"Reinações de Narizinho",
+				"Caçadas de Pedrinho"
+			]
+		}
+	]
 }
