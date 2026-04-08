@@ -49,7 +49,7 @@ app.get('/usuarios/:id', async (req, res) => {
 // })
 
 //1 - Atualizar rota de criacao do usuario para ser /cadastro
-app.post("/cadastro", async (req, res) => {
+app.post("/register", async (req, res) => {
     const dadosUsuario = req.body as Usuario
     const usuarioCriado = await prisma.usuario.create({
         data: {
