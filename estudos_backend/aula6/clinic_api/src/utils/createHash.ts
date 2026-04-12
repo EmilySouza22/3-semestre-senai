@@ -1,8 +1,6 @@
-import bcrypt from "bcrypt";
+const saltRound = 10;
+import bcrypt from "bcrypt"
 
-export async function hasheandoSenha(senha: string){
-    const saltRounds = 10;
-    const hash = await bcrypt.hash(senha, saltRounds);
-    return hash;
+export async function createHash(senha: string) {
+    return await bcrypt.hash(senha, saltRound)
 }
-
