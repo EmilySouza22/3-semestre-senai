@@ -1,66 +1,137 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "image": "https://placehold.co/300x200",
-      "title": "a title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 100
-    },
-    {
-      "id": "2",
-      "image": "https://placehold.co/300x200",
-      "title": "another title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 200
-    },
-    {
-      "id": "3",
-      "image": "https://placehold.co/300x200",
-      "title": "another 2 title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 50
-    },
-    {
-      "id": "4",
-      "image": "https://placehold.co/300x200",
-      "title": "another 3 title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 500
-    },
-    {
-      "id": "5",
-      "image": "https://placehold.co/300x200",
-      "title": "another 4 title",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "views": 1150
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "text": "a comment about post 1",
-      "postId": "1"
-    },
-    {
-      "id": "2",
-      "text": "another comment about post 1",
-      "postId": "1"
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "users": [
-    {
-      "id": "1",
-      "name": "João",
-      "idade": "30"
-    },
-    {
-      "id": "2",
-      "name": "Maria",
-      "idade": "27"
-    }
-  ]
+	"posts": [
+		{
+			"id": "1",
+			"image": "https://placehold.co/300x200",
+			"title": "a title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 100
+		},
+		{
+			"id": "2",
+			"image": "https://placehold.co/300x200",
+			"title": "another title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 200
+		},
+		{
+			"id": "3",
+			"image": "https://placehold.co/300x200",
+			"title": "another 2 title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 50
+		},
+		{
+			"id": "4",
+			"image": "https://placehold.co/300x200",
+			"title": "another 3 title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 500
+		},
+		{
+			"id": "5",
+			"image": "https://placehold.co/300x200",
+			"title": "another 4 title",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			"views": 1150
+		}
+	],
+	"comments": [
+		{
+			"id": "1",
+			"text": "a comment about post 1",
+			"postId": "1"
+		},
+		{
+			"id": "2",
+			"text": "another comment about post 1",
+			"postId": "1"
+		}
+	],
+	"profile": {
+		"name": "typicode"
+	},
+	"users": [
+		{
+			"id": "1",
+			"name": "João",
+			"idade": "30"
+		},
+		{
+			"id": "2",
+			"name": "Maria",
+			"idade": "27"
+		}
+	],
+	"autores": [
+		{
+			"id": 1,
+			"nome": "Alice",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Personagem corajosa e curiosa de 'Alice no País das Maravilhas'.",
+			"biografia": "Alice é uma jovem que atravessa um mundo mágico cheio de personagens estranhos e divertidos. Sua história é sobre aventura, imaginação e a busca por identidade em um universo onde nada é o que parece.",
+			"especialidade": "Fantasia",
+			"cidade": "País das Maravilhas",
+			"idade": 12,
+			"obras": ["Alice no País das Maravilhas", "Através do Espelho"]
+		},
+		{
+			"id": 2,
+			"nome": "Dorothy Gale",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "A jovem que parte em uma jornada mágica pelo mundo de Oz.",
+			"biografia": "Dorothy é uma menina do Kansas que acaba transportada para o mundo fantástico de Oz. Ao longo de sua viagem, ela aprende sobre amizade, coragem e a importância de valorizar seu lar.",
+			"especialidade": "Aventura",
+			"cidade": "Kansas / Oz",
+			"idade": 14,
+			"obras": ["O Mágico de Oz", "Ozma de Oz"]
+		},
+		{
+			"id": 3,
+			"nome": "Elizabeth Bennet",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Protagonista inteligente e independente de 'Orgulho e Preconceito'.",
+			"biografia": "Elizabeth é uma jovem com espírito livre e forte senso de humor, que confronta as regras sociais do século XIX enquanto busca um amor verdadeiro.",
+			"especialidade": "Romance",
+			"cidade": "Longbourn",
+			"idade": 20,
+			"obras": ["Orgulho e Preconceito"]
+		},
+		{
+			"id": 4,
+			"nome": "Hermione Granger",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "A inteligente bruxa de Hogwarts, conhecida por sua lealdade e coragem.",
+			"biografia": "Hermione é uma estudante brilhante que usa sua magia para proteger seus amigos e lutar pelo que é justo. Sua determinação e amor pelo aprendizado tornam ela uma das figuras mais inspiradoras da saga Harry Potter.",
+			"especialidade": "Magia",
+			"cidade": "Hogsmeade / Londres",
+			"idade": 15,
+			"obras": [
+				"Harry Potter e a Pedra Filosofal",
+				"Harry Potter e o Prisioneiro de Azkaban"
+			]
+		},
+		{
+			"id": 5,
+			"nome": "Jane Eyre",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Heroína determinada que busca independência e amor verdadeiro.",
+			"biografia": "Jane Eyre é uma jovem órfã que supera muitas dificuldades para encontrar seu próprio caminho na vida, defendendo seus valores e sua autonomia.",
+			"especialidade": "Drama",
+			"cidade": "Thornfield",
+			"idade": 18,
+			"obras": ["Jane Eyre"]
+		},
+		{
+			"id": 6,
+			"nome": "Jo March",
+			"foto": "https://placehold.co/300x300",
+			"descricao": "Sonhadora e escritora de 'Mulherzinhas', que busca publicar seus textos.",
+			"biografia": "Jo March é uma jovem criativa e independente que enfrenta expectativas sociais ao perseguir sua paixão pela literatura.",
+			"especialidade": "Literatura Juvenil",
+			"cidade": "Concord",
+			"idade": 16,
+			"obras": ["Mulherzinhas"]
+		}
+	]
 }
