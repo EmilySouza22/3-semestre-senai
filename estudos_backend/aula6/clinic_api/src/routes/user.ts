@@ -2,40 +2,31 @@ import { Router } from "express";
 import { createHash } from "../utils/createHash";
 import { prisma } from "../prisma/prisma";
 import type { Usuario } from "../prisma/generated/prisma/client";
+import { userController } from "../controllers/UserController";
 
 export const userRouter = Router();
 
 // Endpoints usuario
-userRouter.get('/usuarios', async (_, res) => {
-  const usuarios = await prisma.usuario.findMany();
-  return res.json(usuarios);
+
+//pegar usuarios
+userRouter.get("/usuarios", async (req, res) => {
+  return userController.buscandoUsuarios(req, res)
 })
 
-userRouter.get('/usuarios/:id', async (req, res) => {
-  const idUsuario = Number(req.params.id)
-  const usuario = await prisma.usuario.findUnique({
-    where: {
-      id: idUsuario
-    }
-  })
-
-  return res.status(200).json(usuario);
+//id
+userRouter.get("/usuarios/:id", async (req, res) => {
+  return userController.buscarUsuario(req, res)
 })
 
+//criando usuarios
 userRouter.post("/usuarios", async (req, res) => {
-  const dadosUsuario = req.body as Usuario
-  const hash = await createHash(dadosUsuario.senha || '');
-  const usuarioCriado = await prisma.usuario.create({
-    data: {
-      email: dadosUsuario.email,
-      nome: dadosUsuario.nome || null,
-      senha: hash
-    }
-  })
-  return res.status(201).json(usuarioCriado)
+  return userController.buscarUsuario(req, res)
 })
 
 
+
+
+//falta aq embaixo 
 userRouter.put("/usuarios/:id", async (req, res) => {
   const idUsuario = Number(req.params.id)
   const dadosParaAtualizar = req.body as Omit<Usuario, 'id'>
