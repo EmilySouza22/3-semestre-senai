@@ -1,4 +1,4 @@
-import type { Exame, PrismaClient, Usuario } from "../prisma/generated/prisma/client";
+import type { Exame, PrismaClient } from "../prisma/generated/prisma/client";
 import { prisma } from "../prisma/prisma";
 
 export class ExamRepository {
