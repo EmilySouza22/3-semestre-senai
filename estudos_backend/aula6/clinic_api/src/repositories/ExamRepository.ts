@@ -25,7 +25,8 @@ export class ExamRepository {
                 tipo_exame: dadosExame.tipo_exame || '',
                 valor: dadosExame.valor || '',
                 resultado: dadosExame.resultado || '',
-                data_exame: dadosExame.data_exame || ''
+                data_exame: dadosExame.data_exame || '',
+                descricao: dadosExame.descricao || ''
             }
         })
     }
@@ -33,7 +34,11 @@ export class ExamRepository {
     async atualizarExame(dadosExame: Partial<Exame>) {
         return await this.prisma.exame.update({
             data: {
-                ...dadosExame
+                tipo_exame: dadosExame.tipo_exame || '',
+                valor: dadosExame.valor || '',
+                resultado: dadosExame.resultado || '',
+                data_exame: dadosExame.data_exame || '',
+                descricao: dadosExame.descricao || ''
             },
             where: {
                 id: dadosExame.id || 0

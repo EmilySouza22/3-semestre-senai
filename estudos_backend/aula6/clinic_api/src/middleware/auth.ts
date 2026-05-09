@@ -21,3 +21,4 @@ export function auth(req: Request, res: Response, next: NextFunction) {
 		});
 	}
 }
+

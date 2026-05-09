@@ -1,54 +1,58 @@
 import type { PrismaClient, Usuario } from "../prisma/generated/prisma/client";
 import { prisma } from "../prisma/prisma";
+import { Role } from "../prisma/generated/prisma/enums";
 
 export class UserRepository {
     constructor(private readonly prisma: PrismaClient) {
         this.prisma = prisma
     }
 
-    async buscarUsuarios() {
-        return await this.prisma.usuario.findMany()
+    async listarTodosUsuarios() {
+        const usuarios = await prisma.usuario.findMany();
+        return usuarios
     }
 
-    async buscarUsuario(id: number) {
-        const idUsuario = Number(id)
-        return await this.prisma.usuario.findUnique({
+    async buscarUsuarioId(idUsuario: number) {
+        const usuario = await prisma.usuario.findUnique({
             where: {
                 id: idUsuario
             }
         })
+        return usuario;
     }
 
-    async criandoUsuario(dadosUsuario: Partial<Usuario>) {
+    async criarUsuario(dadosUsuario: Partial<Usuario>) {
+        console.log(dadosUsuario)
         return await this.prisma.usuario.create({
             data: {
                 email: dadosUsuario.email || "",
                 senha: dadosUsuario.senha || "",
-                nome: dadosUsuario.nome || ""
+                nome: dadosUsuario.nome || "",
+                role: dadosUsuario.role || Role.USER
             }
         })
     }
 
-    async atualizarUsuario(dadosUsuario: Partial<Usuario>) {
-        return await this.prisma.usuario.update({
+    async atualizarUsuario(idUsuario: number, dadosParaAtualizar: Omit<Usuario, 'id'>) {
+        const usuarioAtualizado = await prisma.usuario.update({
             data: {
-                ...dadosUsuario
+                ...dadosParaAtualizar
             },
             where: {
-                id: dadosUsuario.id || 0
+                id: idUsuario
             }
-
         })
-    }
 
-    async deletarUsuario(id: number){
-        return await this.prisma.usuario.delete({
+        return usuarioAtualizado
+    }
+    async deletarUsuario(idUsuario: number) {
+        const usuario = await prisma.usuario.delete({
             where: {
-                id
+                id: idUsuario
             }
         })
+        return usuario;
     }
-
 }
 
 export const userRepository = new UserRepository(prisma)

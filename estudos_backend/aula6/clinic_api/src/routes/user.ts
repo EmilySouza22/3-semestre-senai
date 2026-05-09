@@ -1,13 +1,16 @@
 import { Router } from "express";
 import { userController } from "../controllers/UserController";
+import { auth } from "../middleware/auth";
+import { roleMiddleware } from "../middleware/role";
+import { Role } from "../prisma/generated/prisma/enums";
 
 export const userRouter = Router();
 
-userRouter.get("/usuarios", async (req, res) => {
+userRouter.get("/usuarios", auth, roleMiddleware([Role.ADMIN]), async (req, res) => {
   return userController.buscandoUsuarios(req, res)
 })
 
-userRouter.get("/usuarios/:id", async (req, res) => {
+userRouter.get("/usuarios/:id", auth, async (req, res) => {
   return userController.buscarUsuario(req, res)
 })
 

@@ -1,15 +1,15 @@
 import { Router } from "express";
+import { prisma } from "../prisma/prisma"
+import { Role } from "../prisma/generated/prisma/enums"
 import { examController } from "../controllers/ExamController";
+import { roleMiddleware } from "../middleware/role"
 
 export const exameRouter = Router();
+exameRouter.use(roleMiddleware([Role.ADMIN]))
 
 //Exames
 
-exameRouter.get("/usuarios", async (req, res) => {
-  return examController.buscandoExames(req, res)
-})
-
-exameRouter.get("/usuarios", async (req, res) => {
+exameRouter.get("/exames", async (req, res) => {
   return examController.buscandoExames(req, res)
 })
 

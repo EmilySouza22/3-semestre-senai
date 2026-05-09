@@ -9,7 +9,7 @@ class UserController {
 
     async buscandoUsuarios(req: Request, res: Response) {
         try {
-            const usuarios = await this.service.buscarUsuarios();
+            const usuarios = await this.service.listarTodosUsuarios();
             return res.status(200).json({
                 message: "Usuários encontrados",
                 data: usuarios
@@ -23,7 +23,7 @@ class UserController {
     async buscarUsuario(req: Request, res: Response) {
         try {
             const idUsuario = Number(req.params.id)
-            const dadosBuscaUsuario = await this.service.buscarUsuario(idUsuario)
+            const dadosBuscaUsuario = await this.service.buscarUsuarioId(idUsuario)
             return res.status(201).json({
                 message: "Usuário encontrado!",
                 data: dadosBuscaUsuario
@@ -36,10 +36,7 @@ class UserController {
     async criandoUsuario(req: Request, res: Response) {
         try {
             const dadosUsuario = req.body as Usuario
-            const hash = await createHash(dadosUsuario.senha || '');
-            const usuarioCriado = await this.service.cadastrar({
-                ...dadosUsuario, senha: hash
-            })
+            const usuarioCriado = await this.service.criarUsuario(dadosUsuario)
             return res.status(201).json({
                 message: "Usuário criado com sucesso",
                 data: usuarioCriado
@@ -52,10 +49,8 @@ class UserController {
     async atualizandoUsuario(req: Request, res: Response) {
         try {
             const idUsuario = Number(req.params.id)
-            const dadosAtualizar = req.body as Omit<Usuario, 'id'>
-            const usuarioAtualizado = await this.service.atualizarUsuario({
-                ...dadosAtualizar, id: idUsuario
-            })
+            const dadosParaAtualizar = req.body as Omit<Usuario, 'id'>
+            const usuarioAtualizado = await this.service.atualizarUsuario(idUsuario, dadosParaAtualizar)
             return res.status(200).json(usuarioAtualizado);
         } catch (error) {
             console.log(error)

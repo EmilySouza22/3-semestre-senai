@@ -20,7 +20,8 @@ export class ExamService {
             tipo_exame: dadosExame.tipo_exame || '',
             valor: dadosExame.valor || '',
             resultado: dadosExame.resultado || '',
-            data_exame: dadosExame.data_exame || ''
+            data_exame: dadosExame.data_exame || '', 
+            descricao: dadosExame.descricao || ''
         })
         return exameCriado
     }
@@ -30,7 +31,9 @@ export class ExamService {
             tipo_exame: dadosExame.tipo_exame || '',
             valor: dadosExame.valor || '',
             resultado: dadosExame.resultado || '',
-            data_exame: dadosExame.data_exame || ''
+            data_exame: dadosExame.data_exame || '',
+            descricao: dadosExame.descricao || ''
+
         })
         return exameAtualizado
     }

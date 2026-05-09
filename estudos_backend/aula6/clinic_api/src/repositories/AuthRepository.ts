@@ -1,5 +1,6 @@
 import type { PrismaClient, Token, Usuario } from "../prisma/generated/prisma/client";
 import { prisma } from "../prisma/prisma";
+import { Role } from "../prisma/generated/prisma/enums";
 
 export class AuthRepository {
     constructor(private readonly prisma: PrismaClient) {
@@ -10,7 +11,8 @@ export class AuthRepository {
             data: {
                 email: dadosUsuario.email || "",
                 senha: dadosUsuario.senha || "",
-                nome: dadosUsuario.nome || ""
+                nome: dadosUsuario.nome || "",
+                role: dadosUsuario.role || Role.USER
             }
         })
     }
