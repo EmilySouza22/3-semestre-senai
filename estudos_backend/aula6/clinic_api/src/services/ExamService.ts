@@ -5,8 +5,8 @@ export class ExamService {
     constructor(private readonly repository: ExamRepository) { 
     }
 
-    async buscarExames() {
-        const exames = await this.repository.buscarExames();
+    async buscarExames(pagina?: number, limite?: number) {
+        const exames = await this.repository.buscarExames(pagina, limite);
         return exames
     }
 

@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import type { Exame } from "../prisma/generated/prisma/client"
+import type { Exame, Usuario } from "../prisma/generated/prisma/client"
 import { examService, type ExamService } from "../services/ExamService";
 
 class ExamController {
@@ -8,14 +8,18 @@ class ExamController {
 
     async buscandoExames(req: Request, res: Response) {
         try {
-            const exames = await this.service.buscarExames();
+
+            const pagina = req.query.pagina ? Number(req.query.pagina) : undefined
+            const limite = req.query.limite ? Number(req.query.limite) : undefined
+
+            const exames = await this.service.buscarExames(pagina, limite);
             return res.status(200).json({
                 message: "Exames encontrados",
                 data: exames
             });
 
         } catch (error) {
-            console.log(error)
+            return res.status(404).json({ error })
         }
     }
 
